@@ -1,0 +1,112 @@
+$primary: hsl(171, 100%, 41%) !default;
+
+.checkbox {
+	font-size: 18px;
+	position: relative;
+	display: block;
+	margin-bottom: 15px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.checkbox input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.checkbox__indicator {
+	position: absolute;
+	top: -15px;
+	left: 3px;
+	width: 25px;
+	height: 25px;
+	background: #eee;
+}
+
+
+/* Hover and focus states */
+.checkbox:hover input ~ .checkbox__indicator,
+.checkbox input:focus ~ .checkbox__indicator {
+	background: #e6e6e6;
+}
+
+
+.checkbox input:checked ~ .checkbox__indicator:before {
+    content: "✔";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: $primary;
+    text-align: center;
+}
+
+/* Hover state whilst checked */
+.checkbox:hover input:not([disabled]):checked ~ .checkbox__indicator,
+.checkbox input:checked:focus ~ .checkbox__indicator {
+	// background: #0e647d;
+}
+
+/* Disabled state */
+.checkbox input:disabled ~ .checkbox__indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}
+
+/* Check mark */
+.checkbox__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.checkbox input:checked ~ .checkbox__indicator:after {
+	display: block;
+}
+
+/* Checkbox tick */
+.checkbox--checkbox .checkbox__indicator:after {
+	top: 4px;
+	left: 8px;
+	width: 3px;
+	height: 8px;
+	transform: rotate(45deg);
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.checkbox--checkbox input:disabled ~ .checkbox__indicator:after {
+	border-color: #7b7b7b;
+}
+
+/* Radio button inner circle */
+.checkbox--radio .checkbox__indicator:after {
+	top: 7px;
+	left: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+/* Disabled circle colour */
+.checkbox--radio input:disabled ~ .checkbox__indicator:after {
+	background: #7b7b7b;
+}
+
+
+
+.todo-text.completed{
+    color: $primary;
+    text-decoration: line-through;
+
+    span{
+        color: #bbb
+    }
+}
+
+
+

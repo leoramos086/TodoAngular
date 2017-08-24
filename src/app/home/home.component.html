@@ -1,0 +1,20 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container" style="max-width: 800px">
+      <div class="content has-text-centered">
+        <h1 class="has-text-primary">
+          Tarefas <small class="has-text-dark">[angular]</small>
+        </h1>
+
+        <div class="field">
+          <div class="control">
+            <input type="text" class="input is-medium is-primary" placeholder="O que você precisa fazer?" [(ngModel)]="newTodo" (keyup.enter)="addTodo(inputTodo.value)"
+              #inputTodo>
+          </div>
+          <p class="help">Aperte <b>ENTER</b> para salva sua tarefa</p>
+        </div>
+      </div>
+      <app-todos></app-todos>
+    </div>
+  </div>
+</section>
