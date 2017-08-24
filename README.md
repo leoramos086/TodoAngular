@@ -1,4 +1,4 @@
 Projeto para estudo do [angular 4](https://angular.io/).
 
-##Dependências
+## Dependências
 * [Bulma](http://bulma.io/)
