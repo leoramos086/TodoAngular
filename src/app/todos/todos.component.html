@@ -16,15 +16,21 @@
           </div>
         </div>
       </td>
-      <td width="90%" class="todo-text" [class.completed]="todo.completed"><span>{{todo.text}}</span></td>
-      <td><a class="button is-small is-danger is-outlined" (click)="remove(i)">X</a></td>
+      <td width="90%" class="todo-text" [class.completed]="todo.completed">
+
+        <span (dblclick)="openEdit[i]=true" *ngIf="!openEdit[i]">{{todo.text}}</span>
+        <div *ngIf="openEdit[i]">
+          <input type="text" style="min-width: 50%" [value]="todo.text" (keyup.enter)="edit(i, newTodo.value)" #newTodo/>
+          <a class="button is-small is-success" (click)="edit(i, newTodo.value)">Save</a>
+          <a class="button is-small is-danger" (click)="openEdit[i]=false">Cancel</a>
+        </div>
+      </td>
+      <td><a class="button is-small is-danger is-outlined" (click)="remove(i)">Delete</a></td>
     </tr>
   </tbody>
 </table>
 
 
-<p >
-  
+<p>
+
 </p>
-
-

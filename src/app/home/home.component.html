@@ -11,7 +11,8 @@
             <input type="text" class="input is-medium is-primary" placeholder="O que você precisa fazer?" [(ngModel)]="newTodo" (keyup.enter)="addTodo(inputTodo.value)"
               #inputTodo>
           </div>
-          <p class="help">Aperte <b>ENTER</b> para salva sua tarefa</p>
+          <p class="help">Aperte <b>ENTER</b> para salva sua tarefa.</p>
+          <p class="help">Dê um clipe duplo na tarefa para edita-la.</p>
         </div>
       </div>
       <app-todos></app-todos>
