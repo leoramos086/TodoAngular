@@ -11,10 +11,14 @@ import { TodosService, Todo } from '../todos.service';
 })
 export class HomeComponent {
 
-  constructor(private todosService: TodosService){  }
+  constructor(private todosService: TodosService){
+    this.addTodo("Comprar café");
+    this.addTodo("Levar o cachorro no pet");
+    this.addTodo("Ser Feliz!!!");
+  }
 
   newTodo: string;
- 
+
   addTodo(text:string){
     if (text == "") return;
 
@@ -28,7 +32,7 @@ export class HomeComponent {
     this.newTodo = "";
   }
 
-  
+
 
 
 }

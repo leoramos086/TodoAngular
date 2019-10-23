@@ -9,7 +9,9 @@ import { TodosService, Todo } from '../todos.service';
 })
 export class TodosComponent implements OnInit {
 
-  constructor(private todosService: TodosService) { }
+  constructor(private todosService: TodosService) {
+
+   }
 
   todos: Todo[]
 
@@ -36,7 +38,7 @@ export class TodosComponent implements OnInit {
   edit(id, newTodo) {
     let todo = this.todos[id]
     todo.text = newTodo
-    
+
     this.openEdit[id] = false
     this.todosService.editTodo(id, todo)
 
@@ -50,7 +52,9 @@ export class TodosComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.todos = this.todosService.getTodos()
   }
 
 }
+
